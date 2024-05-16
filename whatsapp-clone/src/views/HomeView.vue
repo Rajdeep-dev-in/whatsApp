@@ -1,8 +1,7 @@
 <script setup>
     //import AccountGroupIcon from 'vue-material-design-icons/AccountGroupIcon.vue'
     import AccountGroupIcon from 'vue-material-design-icons/AccountGroup.vue'
-    import DotsVerticalIcon from 'vue-material-design-icons/DotsVertical.vue'
-    import LogOutIcon from 'vue-material-design-icons/LogOut.vue'
+    import LogoutIcon from 'vue-material-design-icons/Logout.vue'
     import PlusIcon from 'vue-material-design-icons/Plus.vue'
     import MagnifyIcon from 'vue-material-design-icons/Magnify.vue'
     import BaseInput from '../components/BaseInput/index.vue'
@@ -60,8 +59,7 @@
                 <div class="flex-1 h-full flex justify-end items-center gap-x-4">
                     <AccountGroupIcon class="cursor-pointer"/>
                     <PlusIcon class=" cursor-pointer" @click="searchFriend"/>
-                    <!-- <DotsVerticalIcon class=" cursor-pointer"/> -->
-                    <LogOutIcon class=" cursor-pointer" @click="logout" />
+                    <LogoutIcon class=" cursor-pointer" @click="logout" />
                 </div>
             </div>
             <div class="p-2 w-full ">
