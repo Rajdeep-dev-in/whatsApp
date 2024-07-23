@@ -6,13 +6,19 @@ import { db } from '@/firebase-init';
 import { arrayUnion, collection, doc, getDoc, getDocs, onSnapshot, query, setDoc, updateDoc } from 'firebase/firestore';
 
 export const useLoginStore = defineStore('login', () =>{
+    
     let userObj = localStorage.getItem('user')
     let user = JSON.parse(userObj)
-    const sub = ref(user.sub || '')
-    const email = ref(user.email || '')
-    const picture = ref(user.picture || '')
-    const firstName = ref(user.firstName || '')
-    const lastName = ref(user.lastName || '')
+    // const sub = ref(user.sub || '')
+    // const email = ref(user.email || '')
+    // const picture = ref(user.picture || '')
+    // const firstName = ref(user.firstName || '')
+    // const lastName = ref(user.lastName || '')
+    const sub = ref('');
+    const email = ref('');
+    const picture = ref('');
+    const firstName = ref('');
+    const lastName = ref('')
     const searchChat = ref('')
     const startChat = ref('')
     const usersArr = ref([])
@@ -219,11 +225,11 @@ export const useLoginStore = defineStore('login', () =>{
 
     function logOut(){
             localStorage.removeItem('user')
-            // sub.value = ''
-            // email.value = ''
-            // picture.value = ''
-            // firstName.value = ''
-            // lastName.value = ''
+            sub.value = ''
+            email.value = ''
+            picture.value = ''
+            firstName.value = ''
+            lastName.value = ''
     }
 
     const filterChats = computed(() =>{
