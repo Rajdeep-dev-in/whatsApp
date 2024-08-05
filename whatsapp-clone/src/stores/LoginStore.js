@@ -46,6 +46,7 @@ export const useLoginStore = defineStore('login', () =>{
                 lastName: lastName.value
             }))
             let userExists = await checkUserExists(res.data.sub)
+            //console.log(userExists, 'userExits')
             if(!userExists){
                 await saveUserDetails(res)
             } 
@@ -112,6 +113,8 @@ export const useLoginStore = defineStore('login', () =>{
     
     async function getAllUsers(){
         try{
+            console.log('log');
+            
             const res = await getDocs(collection(db, "users"))
             let results = []
             res.docs.forEach(user => {
@@ -230,6 +233,7 @@ export const useLoginStore = defineStore('login', () =>{
             picture.value = ''
             firstName.value = ''
             lastName.value = ''
+            //usersArr.value = []
     }
 
     const filterChats = computed(() =>{
